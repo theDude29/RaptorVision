@@ -10,6 +10,7 @@ from PySide6.QtCore import QThread, Signal, QObject
 import shutil
 from torch.utils.data import DataLoader
 from .model import FastDataset, PatchLibrary
+from .view import PatchCard
 
 class ProcessingWorker(QObject):
     """
