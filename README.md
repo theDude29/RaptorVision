@@ -48,6 +48,8 @@ Due to Meta's license agreement, the model weights cannot always be downloaded a
 
 A comprehensive user guide is integrated directly within the RaptorVision interface. Simply launch the app to explore the features!
 
+By default raptor vision is launched with dino-small and an image resolution (the length of the shorter side of the image) of 672px. If you find that RaptorVision does not detect correctly the entities on your images you can try to increase the resolution (be carefull it shall be a multiple of 16) or to use a better version of dino by typing: `raptor-vision --model-size=[size] --model_resolution=[res]` where size can be small, base or large and res has to be a multiple of 16.
+
 ---
 
 ## Examples & Performance
