@@ -556,7 +556,7 @@ class MainController:
         <h3 style='color: #a5d6ff;'>2. How to Click & Select</h3>
         <ul>
             <li><b>Define a Reference</b>: In the <b>Local View</b>, click on any object. A heatmap will appear showing all similar areas in the image.</li>
-            <li><b>Save to Library</b>: Click <b>'Next'</b> to save this patch's signature and move to the next image.</li>
+            <li><b>Save to Library</b>: Click <b>'Next'</b> to save this patch's signature and move to the next image. Note that only the last patch you have selected will be saved. This allows you to try multiple patch on an animal and keep only the most precise one.</li>
             <li><b>Inspect Matches</b>: In the <b>Memory View</b>, click on a highlighted area (heatmap) to see which library image it corresponds to in the Inspector.</li>
         </ul>
 
@@ -606,7 +606,12 @@ class MainController:
             <li><b>GPU Mode (CUDA)</b>: Uses NVIDIA Tensor cores. This is the fastest mode, recommended for datasets larger than 100 images. Processing usually takes 50-200ms per image.</li>
             <li><b>CPU Mode</b>: If no GPU is detected, the software switches to the processor. Analysis will be <b>10x to 50x slower</b>.</li>
         </ul>
+
+        <h3 style='color: #a5d6ff;'>7. What if RaptorVision is not accurate enough ?</h3>
+        First, you can try to increase the threshold to reduce false positives detections. If you want to improve the recall of the software, you can add more reference patches to your library by clicking on different areas of your images in the explorer view and saving them to the library. The more diverse and representative your reference patches are, the better RaptorVision will perform across your dataset. <br />
         
+        If it is still not accurate enough you can try to increase the image resolution (it shall be a multiple of 16) by launching raptor-vision with the image_resolution argument (ex: raptor-vision --image_resolution 1024) but keep in mind that it will significantly increase the processing time and memory usage of the software (the default value is 672).
+        You can also try to use raptor-vision with a more powerful version of dinov3 (ex: raptor-vision --model_size large) but keep in mind that it will also significantly increase the processing time and memory usage of the software (the default value is small and you can choose between small, base, and large).
         """
         
         self.view.lbl_how_to_text.setText(help_content)
