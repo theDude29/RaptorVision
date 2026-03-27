@@ -94,7 +94,7 @@ You can process entire folders, automatically copy images containing detections 
 
 ---
 
-## 📝 Credits & Data
+## Credits & Data
 - **Developer:** Rémi Pérenne ([remi.perenne@etu.minesparis.psl.eu](mailto:remi.perenne@etu.minesparis.psl.eu))
 - **Image Credits:** Antonin Conan (Biologist) and the [LILA Biodiversity Dataset](https://lila.science/datasets/ohio-small-animals/).
 
