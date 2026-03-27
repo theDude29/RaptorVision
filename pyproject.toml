@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raptor-vision"
+version = "1.0.1"
+description = "Semantic Patch Analysis using DINOv3"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Rémi Pérenne", email = "remi.perenne@etu.minesparis.psl.eu"}
+]
+dependencies = [
+    "PySide6",
+    "torch",
+    "torchvision",
+    "numpy",
+    "Pillow",
+    "matplotlib",
+    "torchmetrics",
+    "termcolor"
+]
+
+[project.scripts]
+raptor-vision = "raptor_vision.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["assets/*.png"]
