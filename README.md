@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./src/raptor_vision/assets/icon.png" alt="RaptorVision Logo" width="50" height="50" style="vertical-align: middle;">
+  <img src="https://raw.githubusercontent.com/theDude29/RaptorVision/main/src/raptor_vision/assets/icon.png" alt="RaptorVision Logo" width="50" height="50" style="vertical-align: middle;">
   RaptorVision
 </h1>
 
@@ -55,7 +55,7 @@ A comprehensive user guide is integrated directly within the RaptorVision interf
 ### 1. Point-and-Detect
 Simply click on an object (e.g., a frog) to teach the model. The left panel shows the reference selection:
 
-![frog](./images/frog.png)
+![frog](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/frog.png)
 
 Select one bird...
 
@@ -63,17 +63,17 @@ Select one bird...
 
 ...and RaptorVision automatically detects the others in subsequent frames:
 
-![bird2](./images/bird2.png)
-![bird3](./images/bird3.png)
+![bird2](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/bird2.png)
+![bird3](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/bird3.png)
 
 *Note: The top-right window shows which memory image the model is currently using for detection.*
 
 ### 2. Complex Scenarios
 RaptorVision handles visual diversity well. By clicking on a lizard, the model successfully identifies other lizards and even a snake in the same environment.
 
-![lezard1](./images/lezard.png)
-![lezard2](./images/lezard2.png)
-![lezard3](./images/lezard3.png)
+![lezard1](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/lezard.png)
+![lezard2](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/lezard2.png)
+![lezard3](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/lezard3.png)
 
 *Tip: If the model is too sensitive (e.g., picking up a snake when you only want lizards), you can easily adjust the sensitivity threshold in the UI.*
 
@@ -82,15 +82,15 @@ For large datasets, RaptorVision generates detection heatmaps and automates file
 
 **Original Image:**
 
-![frog](./images/frog1.JPG)
+![frog](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/frog1.JPG)
 
 **Detection Heatmap:**
 
-![frog](./images/heatmap_frog.JPG)
+![frog](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/heatmap_frog.JPG)
 
 **RaptorScan Interface:**
 You can process entire folders, automatically copy images containing detections to a new folder, and export detailed statistics (CSV/TXT) for analysis in Python or Excel.
-![raptorscan](./images/raptorscan.png)
+![raptorscan](https://raw.githubusercontent.com/theDude29/RaptorVision/main/images/raptorscan.png)
 
 ---
 
