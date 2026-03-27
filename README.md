@@ -1,4 +1,7 @@
-# RaptorVision
+<h1 align="center">
+  <img src="./src/raptor_vision/assets/icon.png" alt="RaptorVision Logo" width="50" height="50" style="vertical-align: middle;">
+  RaptorVision
+</h1>
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![PyPI version](https://badge.fury.io/py/raptor-vision.svg)](https://badge.fury.io/py/raptor-vision)
