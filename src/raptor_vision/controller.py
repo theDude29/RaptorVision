@@ -111,7 +111,7 @@ class MainController:
     def __init__(self, model, view, model_size, max_size):
         self.model, self.view = model, view
         self.model_size, self.max_size = model_size, max_size
-        self.threshold = 0.60
+        self.threshold = 0.70
         
         # State initialization
         self.current_features = None
@@ -282,7 +282,7 @@ class MainController:
         base = QPixmap(img_path).scaled(tw, th, Qt.KeepAspectRatio, Qt.SmoothTransformation)
         rgba = np.zeros((heatmap.shape[0], heatmap.shape[1], 4), dtype=np.uint8)
         rgba[:,:,:3] = (cm.jet(np.clip(heatmap, 0, 1))[:,:,:3]*255).astype(np.uint8)
-        rgba[:,:,3] = np.where(heatmap > 0.5, 160, 0).astype(np.uint8)
+        rgba[:,:,3] = np.where(heatmap > 0.6, 160, 0).astype(np.uint8)
         
         q_img = QImage(rgba.data, heatmap.shape[1], heatmap.shape[0], 4*heatmap.shape[1], QImage.Format_RGBA8888)
         res = base.copy()
@@ -441,6 +441,21 @@ class MainController:
         self.threshold = v/100.0
         self.view.label_thresh_val.setText(f"🎯 Threshold: {self.threshold:.2f}")
         self.update_memory_view()
+
+        #update local heatmap if a patch is currently selected
+        if self.last_click_vector is not None and self.current_features is not None:
+            with torch.no_grad():
+                device = self.model.dino.device
+                
+                hp, wp = self.current_features.shape[:2]
+                
+                f = self.current_features.reshape(-1, self.model.dino.current_config['dim']).to(device)
+                v_click = self.last_click_vector.to(device)
+                
+                sim = torch.matmul(f, v_click)
+                local_scores = sim.reshape(hp, wp).cpu().numpy()
+                
+                self.display_dynamic_heatmap(local_scores, self.view.view_local)
 
     def update_status_info(self):
         """Updates the bottom status bar with general library metrics."""
