@@ -96,6 +96,14 @@ You can process entire folders, automatically copy images containing detections 
 
 ---
 
+## Technical Details & Benchmarks
+
+For an in-depth explanation of how RaptorVision works under the hood — including the DINOv3 feature extraction pipeline, similarity scoring, and performance benchmarks — see the technical paper:
+
+📄 [`paper/raptor_vision_technical_details.pdf`](paper/raptor_vision_technical_details.pdf)
+
+---
+
 ## Credits & Data
 - **Developer:** Rémi Pérenne ([remi.perenne@etu.minesparis.psl.eu](mailto:remi.perenne@etu.minesparis.psl.eu))
 - **Image Credits:** Antonin Conan (Biologist) and the [LILA Biodiversity Dataset](https://lila.science/datasets/ohio-small-animals/).
